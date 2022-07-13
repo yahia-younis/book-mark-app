@@ -1,0 +1,68 @@
+* {
+  text-transform: capitalize;
+  padding: 0;
+  margin: 0;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+body {
+  background-color: #2A464F;
+}
+h1 {
+  font-family: 'Alfa Slab One', cursive;
+  font-size: 3rem;
+  color: #007c6c;
+}
+.body-content {
+  background-color: #fff;
+  margin-left: 5rem;
+  border-bottom-left-radius: 4rem;
+  height: calc(100vh - 5rem);
+}
+.body-content-b {
+  height: 90%;
+}
+.addbtn {
+  bottom: 3rem;
+  right: 3rem;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  transition: 0.3s all;
+}
+.addbtn:hover {
+  transform: scale(1.2);
+}
+.form-control:focus {
+  box-shadow: 0 0 0 0.25rem rgba(21, 115, 71, 0.4);
+}
+#sites_list {
+  height: 70%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 1rem;
+}
+#sites_list i{
+  font-size: 1.2rem;
+  margin-left: 1rem;
+  margin-right: .5rem;
+}
+#sites_list li:not(:last-child) {
+  border-bottom: 1px solid #007c6b50;
+}
+.editbtn,
+.alert {
+  display: none;
+}
+.nos-box img {
+  width: 25%;
+}
+.site-action {
+  margin-top: 1rem;
+  margin-left: auto;
+}
+.site-desc {
+  width: 70%;
+}

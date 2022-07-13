@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/media.css" />
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+      <div class="body-content text-center p-5 position-relative">
+        <div class="body-content-h">
+          <h1>book marker</h1>
+          <p class="text-muted fs-5">Bookmark your favorite sites</p>
+        </div>
+
+        <!-- this site box show when user has saved websites -->
+        <div id="sites_box" class="body-content-b">
+          <!-- search input for find website by name -->
+          <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <input type="text" name="site_search" onkeyup="site_search()" id="site_search" class="form-control rounded-pill" placeholder="search for website">
+            </div>
+          </div>
+          
+          <!-- websites list -->
+          <ul id="sites_list" class="mt-5 text-start"></ul>
+        </div>
+        
+        <!-- this photo box show when user has no saved websites -->
+        <div id="no_sites_box">
+          <div class="body-content-b d-flex justify-content-center align-items-center">
+            <div class="nos-box">
+              <img src="img/3371471.jpg" alt="there is no sites yet">
+              <p class="text-muted fs-5" >You Don't Save Any Sites Yet</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Button trigger modal -->
+        <button onclick="openModal()" type="button" class="btn btn-success position-absolute addbtn" data-bs-toggle="modal" data-bs-target="#addsite">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="addsite" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">save your favourites website</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body py-0">
+              <input class="form-control my-4" type="text" name="Site_Name" id="Site_Name" onkeyup="sitenamevalidation()" placeholder="WebSite Name">
+              <div class="alert alert-danger" id="Name_alert" role="alert">
+                please entar a vaild website name
+              </div>
+              <div class="alert alert-danger" id="web_exist" role="alert">
+                this website is already exist
+              </div>
+              <input class="form-control my-4" type="text" name="Site_URL" id="Site_URL" onkeyup="siteurlvalidation()" placeholder="WebSite URL">
+              <div class="alert alert-danger" id="url_alert" role="alert">
+                please entar a vaild website url
+              </div>
+              <textarea class="form-control my-4" name="Site_desc" id="Site_desc" rows="5" placeholder="WebSite Description"></textarea>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-secondary" onclick="clearform()">Clear Form</button>
+              <button type="button" class="btn btn-success" id="SaveSitebtn" onclick="SaveSite()">Save Site</button>
+              <button type="button" class="btn btn-success editbtn" id="editsitebtn">Edit Site</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
